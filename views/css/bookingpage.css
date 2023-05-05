@@ -1,0 +1,90 @@
+/* Header section */
+.header-navigation{
+    margin-top:5rem;
+}
+
+.header-navigation div:nth-child(1):hover{
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background-color: #e6e6e6;
+}
+
+.backtoLogin:hover{
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background-color: #e6e6e6;
+}
+/* Booking area */
+.trip-section{
+    width:45%;
+}
+.price-section{
+    width:40%;
+    height: 32rem;
+    border:1px solid #e6e6e6;
+    border-radius: 1rem;
+    position:sticky;
+    top:0%;
+}
+
+.user-trip-item div div:nth-child(2){
+    font-size: 1rem;
+}
+
+#loginSignupForm .float-labelform{
+    position:absolute;
+    top:-15%;
+}
+
+.alternative-login div{
+    padding:1rem 4rem;
+    border:1px solid black;
+    border-radius: 1rem;
+}
+
+.alternative-login div:hover{
+    background-color: #e6e6e6;
+}
+#EmailLogin div{
+    margin-left:7.5rem;
+}
+#PhoneLogin div{
+    margin-left:7.5rem;
+}
+
+#EmailLogin,#PhoneLogin{
+    padding:0.6rem;
+    width:100%;
+    border:1px solid black;
+    border-radius: 1rem;
+}
+#submit{
+    width:100%;
+    background-color: #FF385C;
+    padding:0.5rem;
+    color:white;
+    font-weight: 600;
+}
+
+/* price dialog */
+.image img{
+    width:7rem;
+    height:7rem;
+    border-radius: 0.6rem;
+}
+
+.protect-brand{
+    width:2rem;
+    height: 2rem;
+}
+
+.price-text{
+    font-size: 1rem;
+}
+/* Footer section */
+footer{
+    width:100%;
+    background-color: #eeecec;
+}

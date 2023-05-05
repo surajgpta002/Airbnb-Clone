@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request to book</title>
+     <!-- Link CDN -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+     <!-- Link to fonts -->
+     <link
+         href="https://fonts.googleapis.com/css2?family=Fasthand&family=Josefin+Sans:wght@500&family=Nunito:ital,wght@1,200&family=Roboto:wght@800&display=swap"
+         rel="stylesheet">
+         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+     <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+     <!-- Link external css -->
+     <link rel="stylesheet" href="/css/homepage.css">
+     <link rel="stylesheet" href="/css/propertypage.css">
+     <link rel="stylesheet" href="/css/bookingpage.css">
+</head>
+<body>
+     <!-- Nav area -->
+     <nav class="navbar navbar-expand-lg" id="main-nav" style="display:block;">
+        <div class="container d-flex justify-content-between">
+          <a class="navbar-brand" href="/">
+            <img src="logo.jpg" alt="HomePage logo" class="d-inline-block align-text-top" id="main-logo">
+          </a>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="header-navigation d-flex">
+            <div style="margin-top: 0.7rem;" class="back-btn">
+            <span>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Back" role="img" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;">
+                    <g fill="none"><path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
+                    </g>
+                </svg>
+            </span>
+            </div>
+            <div class="h2 ms-4">Request to book</div>
+        </div>
+        <div class="main-bookingarea d-flex justify-content-between">
+            <div class="trip-section mt-5">
+                <div class="bold-text h5">Your trip</div>
+                <div class="user-trip mt-3">
+                    <div class="user-trip-item d-flex justify-content-between">
+                        <div>
+                            <div class="bold-text">Dates</div>
+                            <% let checkinDay = checkinDate.split('-')[2] 
+                               let checkoutDay = checkoutDate.split('-')[2];
+                               const monthName = {
+                                01: "Jan",
+                                02: "Feb",
+                                03: "Mar",
+                                04: "Apr",
+                                05: "May",
+                                06: "Jun",
+                                07: "Jul",
+                                08: "Aug",
+                                09: "Sep",
+                                10: "Oct",
+                                11: "Nov",
+                                12: "Dec"
+                             }
+                             let finalResult = `${checkinDay}-${checkoutDay} ${monthName[parseInt(checkinDate.split('-')[1])]}`
+                            %>
+                            <div class="grey-text mt-1"><%=finalResult%></div>
+                        </div>
+                        <div class="text-underlined bold-text">Edit</div>
+                    </div>
+                    <div class="user-trip-item d-flex justify-content-between mt-4">
+                        <div>
+                            <div class="bold-text">Guests</div>
+                            <div class="grey-text mt-1"><%= guestDetails %></div>
+                        </div>
+                        <div class="text-underlined bold-text">Edit</div>
+                    </div>
+                </div>
+                <hr class="mt-4">
+                <div id="finalLabel" class="fixed-top"></div>
+                <% if (!token) { %>
+                    <div class="displayArea">
+                        <div class="login-area mt-4">
+                            <div class="header d-flex">
+                                <div style="margin-top: 0.7rem;display:none;" class="backtoLogin me-4">
+                                    <span>
+                                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Back" role="img" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;">
+                                            <g fill="none"><path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <h5 class="headText ms-3">Log in or sign up to book</h5>
+                            </div>
+                            <div class="container">
+                                <form id="loginSignupForm" class="mt-4">
+                                    <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="countryCode">
+                                        <option value="358AX">Åland Islands (+358)</option>
+                                        <option value="355AL">Albania (+355)</option>
+                                        <option value="213DZ">Algeria (+213)</option>
+                                        <option value="93AF">Afghanistan (+93)</option>
+                                        <option value="1AS">American Samoa (+1)</option>
+                                        <option value="376AD">Andorra (+376)</option>
+                                        <option value="244AO">Angola (+244)</option>
+                                        <option value="1AI">Anguilla (+1)</option>
+                                        <option value="1AG">Antigua &amp; Barbuda (+1)</option>
+                                        <option value="54AR">Argentina (+54)</option>
+                                        <option value="374AM">Armenia (+374)</option>
+                                        <option value="297AW">Aruba (+297)</option>
+                                        <option value="61AU">Australia (+61)</option>
+                                        <option value="43AT">Austria (+43)</option>
+                                        <option value="994AZ">Azerbaijan (+994)</option>
+                                        <option value="1BS">Bahamas (+1)</option>
+                                        <option value="973BH">Bahrain (+973)</option>
+                                        <option value="880BD">Bangladesh (+880)</option>
+                                        <option value="1BB">Barbados (+1)</option>
+                                        <option value="375BY">Belarus (+375)</option>
+                                        <option value="32BE">Belgium (+32)</option>
+                                        <option value="501BZ">Belize (+501)</option>
+                                        <option value="229BJ">Benin (+229)</option>
+                                        <option value="1BM">Bermuda (+1)</option>
+                                        <option value="975BT">Bhutan (+975)</option>
+                                        <option value="591BO">Bolivia (+591)</option>
+                                        <option value="599BQ">Bonaire, Sint Eustatius and Saba (+599)</option>
+                                        <option value="387BA">Bosnia &amp; Herzegovina (+387)</option>
+                                        <option value="267BW">Botswana (+267)</option>
+                                        <option value="55BR">Brazil (+55)</option>
+                                        <option value="246IO">British Indian Ocean Territory (+246)</option>
+                                        <option value="1VG">British Virgin Islands (+1)</option>
+                                        <option value="673BN">Brunei (+673)</option>
+                                        <option value="359BG">Bulgaria (+359)</option>
+                                        <option value="226BF">Burkina Faso (+226)</option>
+                                        <option value="257BI">Burundi (+257)</option>
+                                        <option value="855KH">Cambodia (+855)</option>
+                                        <option value="237CM">Cameroon (+237)</option>
+                                        <option value="1CA">Canada (+1)</option>
+                                        <option value="238CV">Cape Verde (+238)</option>
+                                        <option value="1KY">Cayman Islands (+1)</option>
+                                        <option value="236CF">Central African Republic (+236)</option>
+                                        <option value="235TD">Chad (+235)</option>
+                                        <option value="56CL">Chile (+56)</option>
+                                        <option value="86CN">China (+86)</option>
+                                        <option value="61CX">Christmas Island (+61)</option>
+                                        <option value="61CC">Cocos (Keeling) Islands (+61)</option>
+                                        <option value="57CO">Colombia (+57)</option>
+                                        <option value="269KM">Comoros (+269)</option>
+                                        <option value="242CG">Congo (+242)</option>
+                                        <option value="682CK">Cook Islands (+682)</option>
+                                        <option value="506CR">Costa Rica (+506)</option>
+                                        <option value="225CI">Côte d’Ivoire (+225)</option>
+                                        <option value="385HR">Croatia (+385)</option>
+                                        <option value="53CU">Cuba (+53)</option>
+                                        <option value="599CW">Curaçao (+599)</option>
+                                        <option value="357CY">Cyprus (+357)</option>
+                                        <option value="420CZ">Czechia (+420)</option>
+                                        <option value="243CD">Democratic Republic of the Congo (+243)</option>
+                                        <option value="45DK">Denmark (+45)</option>
+                                        <option value="253DJ">Djibouti (+253)</option>
+                                        <option value="1DM">Dominica (+1)</option>
+                                        <option value="1DO">Dominican Republic (+1)</option>
+                                        <option value="593EC">Ecuador (+593)</option>
+                                        <option value="20EG">Egypt (+20)</option>
+                                        <option value="503SV">El Salvador (+503)</option>
+                                        <option value="240GQ">Equatorial Guinea (+240)</option>
+                                        <option value="291ER">Eritrea (+291)</option>
+                                        <option value="372EE">Estonia (+372)</option>
+                                        <option value="268SZ">Eswatini (+268)</option>
+                                        <option value="251ET">Ethiopia (+251)</option>
+                                        <option value="500FK">Falkland Islands (Islas Malvinas) (+500)</option>
+                                        <option value="298FO">Faroe Islands (+298)</option>
+                                        <option value="679FJ">Fiji (+679)</option>
+                                        <option value="358FI">Finland (+358)</option>
+                                        <option value="33FR">France (+33)</option>
+                                        <option value="594GF">French Guiana (+594)</option>
+                                        <option value="689PF">French Polynesia (+689)</option>
+                                        <option value="241GA">Gabon (+241)</option>
+                                        <option value="220GM">Gambia (+220)</option>
+                                        <option value="995GE">Georgia (+995)</option>
+                                        <option value="49DE">Germany (+49)</option>
+                                        <option value="233GH">Ghana (+233)</option>
+                                        <option value="350GI">Gibraltar (+350)</option>
+                                        <option value="30GR">Greece (+30)</option>
+                                        <option value="299GL">Greenland (+299)</option>
+                                        <option value="1GD">Grenada (+1)</option>
+                                        <option value="590GP">Guadeloupe (+590)</option>
+                                        <option value="1GU">Guam (+1)</option>
+                                        <option value="502GT">Guatemala (+502)</option>
+                                        <option value="44GG">Guernsey (+44)</option>
+                                        <option value="224GN">Guinea (+224)</option>
+                                        <option value="245GW">Guinea-Bissau (+245)</option>
+                                        <option value="592GY">Guyana (+592)</option>
+                                        <option value="509HT">Haiti (+509)</option>
+                                        <option value="504HN">Honduras (+504)</option>
+                                        <option value="852HK">Hong Kong (+852)</option>
+                                        <option value="36HU">Hungary (+36)</option>
+                                        <option value="354IS">Iceland (+354)</option>
+                                        <option value="91IN">India (+91)</option>
+                                        <option value="62ID">Indonesia (+62)</option>
+                                        <option value="964IQ">Iraq (+964)</option>
+                                        <option value="353IE">Ireland (+353)</option>
+                                        <option value="44IM">Isle of Man (+44)</option>
+                                        <option value="972IL">Israel (+972)</option>
+                                        <option value="39IT">Italy (+39)</option>
+                                        <option value="1JM">Jamaica (+1)</option>
+                                        <option value="81JP">Japan (+81)</option>
+                                        <option value="44JE">Jersey (+44)</option>
+                                        <option value="962JO">Jordan (+962)</option>
+                                        <option value="7KZ">Kazakhstan (+7)</option>
+                                        <option value="254KE">Kenya (+254)</option>
+                                        <option value="686KI">Kiribati (+686)</option>
+                                        <option value="383XK">Kosovo (+383)</option>
+                                        <option value="965KW">Kuwait (+965)</option>
+                                        <option value="996KG">Kyrgyzstan (+996)</option>
+                                        <option value="856LA">Laos (+856)</option>
+                                        <option value="371LV">Latvia (+371)</option>
+                                        <option value="961LB">Lebanon (+961)</option>
+                                        <option value="266LS">Lesotho (+266)</option>
+                                        <option value="231LR">Liberia (+231)</option>
+                                        <option value="218LY">Libya (+218)</option>
+                                        <option value="423LI">Liechtenstein (+423)</option>
+                                        <option value="370LT">Lithuania (+370)</option>
+                                        <option value="352LU">Luxembourg (+352)</option>
+                                        <option value="853MO">Macau (+853)</option>
+                                        <option value="389MK">Macedonia (+389)</option>
+                                        <option value="261MG">Madagascar (+261)</option>
+                                        <option value="265MW">Malawi (+265)</option>
+                                        <option value="60MY">Malaysia (+60)</option>
+                                        <option value="960MV">Maldives (+960)</option>
+                                        <option value="223ML">Mali (+223)</option>
+                                        <option value="356MT">Malta (+356)</option>
+                                        <option value="692MH">Marshall Islands (+692)</option>
+                                        <option value="596MQ">Martinique (+596)</option>
+                                        <option value="222MR">Mauritania (+222)</option>
+                                        <option value="230MU">Mauritius (+230)</option>
+                                        <option value="262YT">Mayotte (+262)</option>
+                                        <option value="52MX">Mexico (+52)</option>
+                                        <option value="691FM">Micronesia (+691)</option>
+                                        <option value="373MD">Moldova (+373)</option>
+                                        <option value="377MC">Monaco (+377)</option>
+                                        <option value="976MN">Mongolia (+976)</option>
+                                        <option value="382ME">Montenegro (+382)</option>
+                                        <option value="1MS">Montserrat (+1)</option>
+                                        <option value="212MA">Morocco (+212)</option>
+                                        <option value="258MZ">Mozambique (+258)</option>
+                                        <option value="95MM">Myanmar (+95)</option>
+                                        <option value="264NA">Namibia (+264)</option>
+                                        <option value="674NR">Nauru (+674)</option>
+                                        <option value="977NP">Nepal (+977)</option>
+                                        <option value="31NL">Netherlands (+31)</option>
+                                        <option value="687NC">New Caledonia (+687)</option>
+                                        <option value="64NZ">New Zealand (+64)</option>
+                                        <option value="505NI">Nicaragua (+505)</option>
+                                        <option value="227NE">Niger (+227)</option>
+                                        <option value="234NG">Nigeria (+234)</option>
+                                        <option value="683NU">Niue (+683)</option>
+                                        <option value="672NF">Norfolk Island (+672)</option>
+                                        <option value="1MP">Northern Mariana Islands (+1)</option>
+                                        <option value="47NO">Norway (+47)</option>
+                                        <option value="968OM">Oman (+968)</option>
+                                        <option value="92PK">Pakistan (+92)</option>
+                                        <option value="680PW">Palau (+680)</option>
+                                        <option value="970PS">Palestinian Territories (+970)</option>
+                                        <option value="507PA">Panama (+507)</option>
+                                        <option value="675PG">Papua New Guinea (+675)</option>
+                                        <option value="595PY">Paraguay (+595)</option>
+                                        <option value="51PE">Peru (+51)</option>
+                                        <option value="63PH">Philippines (+63)</option>
+                                        <option value="64PN">Pitcairn Islands (+64)</option>
+                                        <option value="48PL">Poland (+48)</option>
+                                        <option value="351PT">Portugal (+351)</option>
+                                        <option value="1PR">Puerto Rico (+1)</option>
+                                        <option value="974QA">Qatar (+974)</option>
+                                        <option value="262RE">Réunion (+262)</option>
+                                        <option value="40RO">Romania (+40)</option>
+                                        <option value="7RU">Russia (+7)</option>
+                                        <option value="250RW">Rwanda (+250)</option>
+                                        <option value="685WS">Samoa (+685)</option>
+                                        <option value="378SM">San Marino (+378)</option>
+                                        <option value="239ST">São Tomé &amp; Príncipe (+239)</option>
+                                        <option value="966SA">Saudi Arabia (+966)</option>
+                                        <option value="221SN">Senegal (+221)</option>
+                                        <option value="381RS">Serbia (+381)</option>
+                                        <option value="248SC">Seychelles (+248)</option>
+                                        <option value="232SL">Sierra Leone (+232)</option>
+                                        <option value="65SG">Singapore (+65)</option>
+                                        <option value="1SX">Sint Maarten (+1)</option>
+                                        <option value="421SK">Slovakia (+421)</option>
+                                        <option value="386SI">Slovenia (+386)</option>
+                                        <option value="677SB">Solomon Islands (+677)</option>
+                                        <option value="252SO">Somalia (+252)</option>
+                                        <option value="27ZA">South Africa (+27)</option>
+                                        <option value="500GS">South Georgia &amp; South Sandwich Islands (+500)</option>
+                                        <option value="82KR">South Korea (+82)</option>
+                                        <option value="211SS">South Sudan (+211)</option>
+                                        <option value="34ES">Spain (+34)</option>
+                                        <option value="94LK">Sri Lanka (+94)</option>
+                                        <option value="590BL">St Barthélemy (+590)</option>
+                                        <option value="290SH">St Helena (+290)</option>
+                                        <option value="1KN">St Kitts &amp; Nevis (+1)</option>
+                                        <option value="1LC">St Lucia (+1)</option>
+                                        <option value="590MF">St Martin (+590)</option>
+                                        <option value="508PM">St Pierre &amp; Miquelon (+508)</option>
+                                        <option value="1VC">St Vincent &amp; Grenadines (+1)</option>
+                                        <option value="249SD">Sudan (+249)</option>
+                                        <option value="597SR">Suriname (+597)</option>
+                                        <option value="47SJ">Svalbard &amp; Jan Mayen (+47)</option>
+                                        <option value="46SE">Sweden (+46)</option>
+                                        <option value="41CH">Switzerland (+41)</option>
+                                        <option value="886TW">Taiwan (+886)</option>
+                                        <option value="992TJ">Tajikistan (+992)</option>
+                                        <option value="255TZ">Tanzania (+255)</option>
+                                        <option value="66TH">Thailand (+66)</option>
+                                        <option value="670TL">Timor-Leste (+670)</option>
+                                        <option value="228TG">Togo (+228)</option>
+                                        <option value="690TK">Tokelau (+690)</option>
+                                        <option value="676TO">Tonga (+676)</option>
+                                        <option value="1TT">Trinidad &amp; Tobago (+1)</option>
+                                        <option value="216TN">Tunisia (+216)</option>
+                                        <option value="90TR">Turkey (+90)</option>
+                                        <option value="993TM">Turkmenistan (+993)</option>
+                                        <option value="1TC">Turks &amp; Caicos Islands (+1)</option>
+                                        <option value="688TV">Tuvalu (+688)</option>
+                                        <option value="256UG">Uganda (+256)</option>
+                                        <option value="380UA">Ukraine (+380)</option>
+                                        <option value="971AE">United Arab Emirates (+971)</option>
+                                        <option value="44GB">United Kingdom (+44)</option>
+                                        <option value="1US" selected>United States (+1)</option>
+                                        <option value="598UY">Uruguay (+598)</option>
+                                        <option value="1VI">US Virgin Islands (+1)</option>
+                                        <option value="998UZ">Uzbekistan (+998)</option>
+                                        <option value="678VU">Vanuatu (+678)</option>
+                                        <option value="379VA">Vatican City (+379)</option>
+                                        <option value="58VE">Venezuela (+58)</option>
+                                        <option value="84VN">Vietnam (+84)</option>
+                                        <option value="681WF">Wallis &amp; Futuna (+681)</option>
+                                        <option value="212EH">Western Sahara (+212)</option>
+                                        <option value="967YE">Yemen (+967)</option>
+                                        <option value="260ZM">Zambia (+260)</option>
+                                        <option value="263ZW">Zimbabwe (+263)</option>
+                                    </select>
+                                    <label for="floatingSelect" class="float-labelform">Country/Region</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="phoneNumber">
+                                    <label for="floatingInput" class="float-labelform">Phone Number</label>
+                                    </div>
+                                    <div class="form-floating mb-3" style="display:none">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                                    <label for="floatingInput" class="float-labelform">Email</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" name="password">
+                                        <label for="floatingInput">Password</label>
+                                    </div>
+                                    <div class="mb-4">
+                                    <button class="btn" id="authSubmit" onclick="invokeMethod()">Continue</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="toggling-block">
+                                <div class="border-bottom"></div>
+                                <span id="small-text">or</span>
+                                <div class="d-flex justify-content-between alternative-login">
+                                    <div class="mb-2 login-alt">
+                                        <span class="image-span">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                        </svg>
+                                        </span>
+                                    </div>
+                                    <div class="mb-2 login-alt">
+                                        <span class="image-span">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                            d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                                        </svg>
+                                        </span>
+                                    </div>
+                                    <div class="mb-2 login-alt">
+                                        <span class="image-span">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-apple"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                            d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
+                                            <path
+                                            d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
+                                        </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggling-block">
+                            <div class="mb-4 text-center">New user ?<span id="linkRegister" style="color:#FF385C;cursor: pointer;">Register here</span></div>
+                            <div class="mb-2 login-alt" id="EmailLogin">
+                                <span class="image-span ms-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                                </svg>
+                                </span>
+                                <div class="btn alt-login">Continue with Email</div>
+                            </div>
+                            <div class="mb-2 login-alt" id="PhoneLogin" style="display:none">
+                                <span class="image-span ms-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                    d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
+                                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                </svg>
+                                </span>
+                                <div class="btn alt-login">Continue with Phone</div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+                <% if (token) { %>
+                    <div class="displayArea">
+                        <div class="mb-4">
+                            <button class="btn" id="submit" onclick="submitBooking()">Book Now</button>
+                          </div>
+                    </div>
+                <% } %>
+            </div>
+            <div class="price-section mt-5">
+                <div class="container d-flex justify-content-around mt-4">
+                    <div class="image">
+                        <img src="<%= response.images.picture_url %>" alt="" srcset="">
+                    </div>
+                    <div class="ms-2">
+                        <span class="grey-text"><%= response.property_type %></span>
+                        <div><%= response.name %></div>
+                        <div class="mt-3 d-flex">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-star-fill star-img" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                              </svg></span>
+                            <span class="grey-text">&nbsp;<span class="bold-text .small-text"><%= response.review_scores.review_scores_value%></span> (<%=response.number_of_reviews%> reviews)</span>
+                            <span>&nbsp;&centerdot;</span>
+                            <span class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="M8.498 7.593l3.1-1.74c.5-.278.99-.552 1.474-.82a.833.833 0 0 0 .428-.729v-2.97A.833.833 0 0 0 12.667.5H3.333a.833.833 0 0 0-.833.833v2.97c0 .303.164.582.428.729l3 1.675 1.575.886c.348.195.647.195.995-.001zM8 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"></path></svg></span>
+                            <span class="grey-text">&nbsp;<%= response.host.host_is_superhost?"Superhost":"Verified" %></span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-4 mx-3">
+                <div class="container">
+                    <div class="mt-3 ms-3">Your booking is protected by <span><img class= "protect-brand" src="shield.png"></span></div>
+                </div>
+                <hr class="mt-4 mx-3">
+                <div class="container">
+                    <div class="h4 mt-3 ms-3">Price details</div>
+                    <div class="pricing-details mx-3 mt-4">
+                        <div class="d-flex justify-content-between mt-2">
+                            <% const date1 = new Date(checkinDate);
+                            const date2 = new Date(checkoutDate);
+                            const diffTime = Math.abs(date2 - date1);
+                            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+                            %>
+                           <div class="text-underlined grey-text price-text">$<%= response.price %> X <%=diffDays%> nights</div>
+                           <% const priceRate = parseInt(response.price) * parseInt(diffDays) %>
+                           <div class="grey-text price-text">$<%=priceRate%></div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2">
+                            <div class="text-underlined grey-text price-text">Cleaning fee</div>
+                            <%let cleaningFee = parseInt(response.cleaning_fee!=null?response.cleaning_fee:500)%>
+                            <div class="grey-text price-text">$<%=cleaningFee%></div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2">
+                            <div class="text-underlined grey-text price-text">Airbnb service fee</div>
+                            <%let serviceFee = parseInt(response.security_deposit != null? response.security_deposit : "500")%>
+                            <div class="grey-text price-text">$<%= serviceFee %></div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2">
+                            <div class="text-underlined grey-text price-text">Taxes</div>
+                            <% const tax = Math.ceil((priceRate + cleaningFee + serviceFee)*0.12) %>
+                            <div class="grey-text price-text">$<%=tax%></div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-4 mx-3">
+                <div class="container mt-3">
+                    <div class="d-flex justify-content-between mx-3">
+                        <div class="bold-text">Total (dollars)</div>
+                        <div class="bold-text">$<%=(priceRate + cleaningFee + serviceFee + tax)%></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="bottom d-flex justify-content-around mt-3">
+            <div class="me-5 mt-3">
+            <span class="ref-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" fill="currentColor" class="bi bi-c-circle mb-1" viewBox="0 0 16 16">
+                <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z"/>
+            </svg>
+            <%= new Date().getUTCFullYear() %> Airbnb,Inc. <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/> 
+            </svg> 
+            </span>
+            <span class="ref-text">Privacy <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/> 
+            </svg> </span>
+            <span class="ref-text">Terms  <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/> 
+            </svg> </span>
+            <span class="ref-text">Sitemap  <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/> 
+            </svg> </span>
+            <span class="ref-text">Company details  <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/> 
+            </svg> </span>
+            </div>
+            <div class="ms-5 mt-3">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe"
+                    viewBox="0 0 16 16">
+                    <path
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
+                </svg> &nbsp;<span class="guide-text"> English (US) &nbsp;&nbsp;</span>
+            </span>
+            <span class="guide-text">$ US dollars&nbsp;</span>
+            <span class="me-2">
+                &nbsp;&nbsp;
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+                &nbsp;&nbsp;
+            </span>
+            <span class="me-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                </svg>
+                &nbsp;&nbsp;
+            </span>
+            <span class="me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg>&nbsp;&nbsp;</span>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"></script>
+    <script src="/js/bookingpage.js"></script>
+</body>
+</html>

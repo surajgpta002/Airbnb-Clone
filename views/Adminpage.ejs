@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb - Admin Corner</title>
+    <!-- Link CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <!-- Link to fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fasthand&family=Josefin+Sans:wght@500&family=Nunito:ital,wght@1,200&family=Roboto:wght@800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Link external css -->
+  <link rel="stylesheet" href="/css/adminpage.css">
+  <link rel="stylesheet" href="/css/homepage.css">
+</head>
+
+<body>
+        <!--Main Navbar area  -->
+        <nav class="navbar navbar-expand-lg" id="main-nav">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img src="logo.jpg" alt="HomePage logo" class="d-inline-block align-text-top" id="main-logo">
+              </a>
+              <div class="adminUser clubbed-items">
+                <div class="collapse navbar-collapse ms-2" id="navbarNavDarkDropdown">
+                  <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                      <button class="btn" id="navbarBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" fill="currentColor" class="bi bi-list"
+                          viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" fill="currentColor"
+                          class="bi bi-person-circle" viewBox="0 0 16 16">
+                          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                          <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-lg-end nav-dropdown" style="top:3rem;z-index:100;">
+                        <% if (!token) { %>
+                          <li><button class="dropdown-item fw-semibold" type="button">Sign up</button></li>
+                          <li><button class="dropdown-item" type="button">Login</button></li>
+                          <hr>
+                        <% } %>
+                        <li><button class="dropdown-item" type="button">Airbnb your home</button></li>
+                        <li><button class="dropdown-item" type="button">Host an experience</button></li>
+                        <li><button class="dropdown-item" type="button">Help</button></li>
+                        <% if (token) { %>
+                          <li><button class="dropdown-item" type="button" onclick="logoutUser()">Logout</button></li>
+                        <% }else{ %>
+                          <%# Do nothing %>
+                        <%}%>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div id="liveAlertPlaceholder" class="fixed-top"></div>
+        <aside id="aside-menu">
+            <h3 class="h3 nav-header">Navigation Panel</h3>
+            <ul class="navigation-menu">
+                <li id="option-1">Properties</li>
+                <% if (userType === "admin") { %>
+                  <li id="option-2">Users</li>
+                <% } %>
+            </ul>
+        </aside>
+        <% if (type === "properties") {%>
+        <div class="grid-display">
+            <div class="header">
+                <h3 class="h3">List of Properties</h3>
+                <button class="btn btn-success add-prop" onclick="invokeAddProperty()">Add</button>
+            </div>
+            <hr>
+            <div class="container text-center">
+                <div class="row header-row">
+                  <div class="col mx-1 pt-2">
+                    Name
+                  </div>
+                  <div class="col mx-1 pt-2">
+                    Address
+                  </div>
+                  <div class="col mx-1 pt-2">
+                    Country
+                  </div>
+                  <div class="col mx-1 pt-2">
+                    Accomodation
+                  </div>
+                  <div class="col mx-1 pt-2">
+                    Price
+                  </div>
+                  <div class="col mx-1 pt-2">
+                    Review
+                  </div>
+                </div>
+                <div class="result">
+                  
+                <% for( let index = 0; index < response.length; index++ ) { %>
+                    <div class="row result-row">
+                        <div class="col pt-2 prop-name"><%=response[index].name %></div>
+                        <div class="col pt-2"><%=response[index].address.market%></div>
+                        <div class="col pt-2"><%=response[index].address.country%></div>
+                        <div class="col pt-2"><%=response[index].accommodates%></div>
+                        <div class="col pt-2">$ <%=response[index].price%></div>
+                        <div class="col pt-2 d-flex justify-content-evenly">
+                            <div><%= response[index].review_scores.review_scores_value %></div>
+                            <div class="clubbed-container">
+                                <button class="btn btn-secondary edit-prop" onclick="invokeEdit(this)">Edit</button>
+                                <button class="btn btn-danger rev-prop" onclick="invokeDelete(this)">Delete</button>
+                            </div>
+                        </div>
+                    </div>    
+                <% } %>
+                <%}%>
+            </div>
+        </div>
+      </div>
+      <% if (type === "users") {%>
+      <div class="grid-display users-grid">
+        <div class="header">
+          <h3 class="h3">List of Users</h3>
+          <button class="btn btn-success add-prop" onclick="invokeAddProperty()">Add</button>
+        </div>
+        <hr>
+        <div class="container text-center">
+          <div class="row header-row" id="userheader">
+            <div class="col mx-1 pt-2">
+              FirstName
+            </div>
+            <div class="col mx-1 pt-2">
+              LastName
+            </div>
+            <div class="col mx-1 pt-2">
+              Country
+            </div>
+            <div class="col mx-1 pt-2">
+              Phone
+            </div>
+            <div class="col mx-1 pt-2">
+              Email
+            </div>
+            <div class="col mx-1 pt-2">
+              DOB
+            </div>
+          </div> 
+          <div class="result">
+            <% for( let index = 0; index < response.length; index++ ) { %>
+              <div class="row result-row userrow">
+                  <div class="col pt-2"><%=response[index].firstname %></div>
+                  <div class="col pt-2"><%=response[index].lastname%></div>
+                  <div class="col pt-2"><%=response[index].country%></div>
+                  <div class="col pt-2"><%=response[index].phone%></div>
+                  <div class="col pt-2"><%=response[index].email%></div>
+                  <div class="col pt-2 d-flex justify-content-between">
+                      <div><%= response[index].dob %></div>
+                      <div class="clubbed-container">
+                          <button class="btn btn-danger users-rev rev-prop" onclick="deleteUser(this)">Delete</button>
+                      </div>
+                  </div>
+              </div>    
+          <% } %>
+            <%}%>
+          </div>
+        </div>
+      </div>
+        <div class="container add-prop-dialog" style="display:none">
+            <div class="header">
+                <button class="btn close-btn" onclick="closeDialog()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                  </svg>
+                </button>
+                <h5 class="text-center headText">Add property</h5>
+              </div>
+            <form id="propertyForm">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="propname">
+                    <label for="floatingInput">Property Name</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="address">
+                    <label for="floatingInput">Address,street,suburb</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="country">
+                    <label for="floatingInput">Country</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="accomodation">
+                    <label for="floatingInput">Accomodation</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="imageUrl">
+                    <label for="floatingInput">Property Image</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="price">
+                    <label for="floatingInput">Price</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="review">
+                    <label for="floatingInput">Review</label>
+                  </div>
+                  <div class="mb-4">
+                    <button class="btn formbutton" id="authSubmit" onclick="invokeSubmit()">Add</button>
+                  </div>
+            </form>
+        </div>
+        <div class="alertBox" style="display:none">
+          <span>Are you sure you want to delete this property?</span>
+          <div class="container">
+              <button class="btn btn-secondary px-4" id="yes">Yes</button>
+              <button class="btn btn-secondary px-4" id="no">No</button>
+          </div>
+        </div>
+        <div class="container" id="add-user-dialog" style="display:none">
+           <div class="header">
+                <button class="btn close-btn" onclick="closeDialog()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                  </svg>
+                </button>
+                <h5 class="text-center headText">Add User</h5>
+              </div>
+            <form id="userForm">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="firstname">
+                    <label for="floatingInput">FirstName</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="lastname">
+                    <label for="floatingInput">LastName</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="email">
+                    <label for="floatingInput">Email</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="phone">
+                    <label for="floatingInput">Phone</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="usercountry">
+                    <label for="floatingInput">Country</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" name="dob">
+                    <label for="floatingInput">DOB</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="" name="password">
+                    <label for="floatingInput">Password</label>
+                  </div>
+                  <div class="mb-4">
+                    <button type="submit" class="btn formbutton" id="authSubmit" onclick="invokeUserSubmit()">Add</button>
+                  </div>
+            </form>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <!-- Include External script -->
+  <script src="/js/adminpage.js"></script>
+</body>
+
+</html>

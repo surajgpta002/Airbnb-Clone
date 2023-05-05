@@ -1,0 +1,500 @@
+////////////////////////////HTML////////////////////////////////////////
+ <hr class="comm-margin mt-4 comm-rel">
+    <div class="reviews comm-margin">
+      <div class="review-header mt-4">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" fill="currentColor" class="bi bi-star-fill star-img" viewBox="0 0 16 16">
+              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+          </span>
+          <span class="bold-text">4.81</span>
+          <span class="bold-text">&CenterDot;</span>
+          <span class="bold-text">145 reviews</span>
+      </div>
+      <div class="rating-container d-flex justify-content-between flex-wrap mt-3">
+        <div class="rating-item d-flex my-2">
+          <div>Cleanliness</div>
+          <div class="progress-section">
+            <div class="progress"  role="progressbar" aria-label="Example 1px high" aria-valuenow="1" aria-valuemin="0" aria-valuemax="10" style="height: 5px">
+              <div class="progress-bar" style="width:1rem"></div>
+            </div>
+          </div>
+          <span class="rating-value m-1">4.8</span>
+        </div>
+        <div class="rating-item d-flex my-2">
+          <div>Accuracy</div>
+          <div class="progress-section">
+            <div class="progress"  role="progressbar" aria-label="Example 1px high" aria-valuenow="8" aria-valuemin="0" aria-valuemax="10" style="height: 5px">
+              <div class="progress-bar" style="width: 7rem"></div>
+            </div>
+          </div>
+          <span class="rating-value m-1">4.8</span>
+        </div>
+        <div class="rating-item d-flex my-2">
+          <div>Communication</div>
+          <div class="progress-section" style="margin-left:7.2rem">
+            <div class="progress"  role="progressbar" aria-label="Example 1px high" aria-valuenow="8" aria-valuemin="0" aria-valuemax="10" style="height: 5px">
+              <div class="progress-bar" style="width: 7rem"></div>
+            </div>
+          </div>
+          <span class="rating-value m-1">4.8</span>
+        </div>
+        <div class="rating-item d-flex my-2">
+          <div>Location</div>
+          <div class="progress-section" style="margin-left: 9.3rem;">
+            <div class="progress"  role="progressbar" aria-label="Example 1px high" aria-valuenow="8" aria-valuemin="0" aria-valuemax="10" style="height: 5px">
+              <div class="progress-bar" style="width: 7rem"></div>
+            </div>
+          </div>
+          <span class="rating-value m-1">4.8</span>
+        </div>
+        <div class="rating-item d-flex my-2">
+          <div>Check-in</div>
+          <div class="progress-section" style="margin-left:10rem">
+            <div class="progress"  role="progressbar" aria-label="Example 1px high" aria-valuenow="8" aria-valuemin="0" aria-valuemax="10" style="height: 5px">
+              <div class="progress-bar" style="width: 7rem"></div>
+            </div>
+          </div>
+          <span class="rating-value m-1">4.8</span>
+        </div>
+        <div class="rating-item d-flex my-2">
+          <div>Value</div>
+          <div class="progress-section" style="margin-left:10.5rem">
+            <div class="progress"  role="progressbar" aria-label="Example 1px high" aria-valuenow="8" aria-valuemin="0" aria-valuemax="10" style="height: 5px">
+              <div class="progress-bar" style="width: 7rem"></div>
+            </div>
+          </div>
+          <span class="rating-value m-1">4.8</span>
+        </div>
+      </div>
+      <div class="review-container d-flex justify-content-between flex-wrap mt-3">
+        <div class="review-item me-1 mt-2">
+            <div class="bold-text">Joel</div>
+            <div class="grey-text">February 2023</div>
+            <div class="comment">Beautiful stay, hosts were very responsive. Everything was as it was pictured 
+            and entire house was spotless. Everything in the house was labeled so there was no 
+            confusion and necessities</div>
+        </div>
+        <div class="review-item me-1 mt-2">
+          <div class="bold-text">Joel</div>
+          <div class="grey-text">February 2023</div>
+          <div class="comment">Beautiful stay, hosts were very responsive. Everything was as it was pictured 
+          and entire house was spotless. Everything in the house was labeled so there was no 
+          confusion and necessities</div>
+        </div>
+       <div class="review-item me-1 mt-2">
+        <div class="bold-text">Joel</div>
+        <div class="grey-text">February 2023</div>
+        <div class="comment">Beautiful stay, hosts were very responsive. Everything was as it was pictured 
+        and entire house was spotless. Everything in the house was labeled so there was no 
+        confusion and necessities</div>
+       </div>
+       <div class="review-item me-1 mt-2">
+      <div class="bold-text">Joel</div>
+      <div class="grey-text">February 2023</div>
+      <div class="comment">Beautiful stay, hosts were very responsive. Everything was as it was pictured 
+      and entire house was spotless. Everything in the house was labeled so there was no 
+      confusion and necessities</div>
+       </div>
+       <div class="review-item me-1 mt-2">
+        <div class="bold-text">Joel</div>
+        <div class="grey-text">February 2023</div>
+        <div class="comment">Beautiful stay, hosts were very responsive. Everything was as it was pictured 
+        and entire house was spotless. Everything in the house was labeled so there was no 
+        confusion and necessities</div>
+       </div>
+       <div class="review-item me-1 mt-2">
+        <div class="bold-text">Joel</div>
+        <div class="grey-text">February 2023</div>
+        <div class="comment">Beautiful stay, hosts were very responsive. Everything was as it was pictured 
+        and entire house was spotless. Everything in the house was labeled so there was no 
+        confusion and necessities</div>
+       </div>
+       <div class="review-item mt-4">
+        <button class="btn amm-btn bold-text">Show all reviews</button>
+       </div>
+     </div>
+    </div>
+    <hr id="spc-divider" class="mt-4 comm-rel">
+    <div class="host-section mt-5 comm-margin comm-rel">
+      <div class="host-header d-flex">
+        <div class="icon">
+          <img src="https://a0.muscache.com/im/pictures/user/30283df3-5b0b-47bb-8f81-990bdf925fb6.jpg?aki_policy=profile_x_medium" alt="">
+        </div>
+        <div class="host-name mt-2">
+          <div class="bold-text ms-3">Hosted by Antti</div>
+        </div>
+      </div>
+      <div class="host-info d-flex justify-content-between mt-3">
+        <div class="host-acheivement">
+          <span class="me-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" fill="currentColor" class="bi bi-star-fill star-img" viewBox="0 0 16 16">
+              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+            <span>110 Reviews</span>
+          </span>
+          <span class="me-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"/>
+            </svg>
+            <span>Identity verified</span>
+          </span>
+          <span class="me-4">
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-balloon-heart-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8.49 10.92C19.412 3.382 11.28-2.387 8 .986 4.719-2.387-3.413 3.382 7.51 10.92l-.234.468a.25.25 0 1 0 .448.224l.04-.08c.009.17.024.315.051.45.068.344.208.622.448 1.102l.013.028c.212.422.182.85.05 1.246-.135.402-.366.751-.534 1.003a.25.25 0 0 0 .416.278l.004-.007c.166-.248.431-.646.588-1.115.16-.479.212-1.051-.076-1.629-.258-.515-.365-.732-.419-1.004a2.376 2.376 0 0 1-.037-.289l.008.017a.25.25 0 1 0 .448-.224l-.235-.468ZM6.726 1.269c-1.167-.61-2.8-.142-3.454 1.135-.237.463-.36 1.08-.202 1.85.055.27.467.197.527-.071.285-1.256 1.177-2.462 2.989-2.528.234-.008.348-.278.14-.386Z"/>
+            </svg></span>
+            <span>Superhost</span>
+          </span>
+          <div class="location mt-3">
+            <div class="bold-text">Host location</div>
+            <div>We live in the Denver area, please reach out via text with any questions. We also have a local handyman and cleaners that can help with most questions during your stay.</div>
+          </div>
+          <div class="host-type mt-3">
+            <div class="bold-text">Antti is a Superhost</div>
+            <div>Superhosts are experienced, highly rated hosts who are committed to providing great stays for their guests.</div>
+          </div>
+        </div>
+        <div class="host-reach">
+          <div>Response Rate: 100%</div>
+          <div>Response time:within an hour</div>
+          <div class="mt-4"><button class="btn amm-btn bold-text">Contact host</button></div>
+        </div>
+      </div>
+    </div>
+    <hr id="spc-divider" class="mt-4 comm-rel">
+    <div class="faqs mt-4 comm-margin comm-rel">
+      <div class="bold-text mb-2">Things to know</div>
+      <div class="dosdont d-flex justify-content-between mt-4">
+        <div class="house-rules">
+          <div class="bold-text">House rules</div>
+          <div class="mt-2">Check-in after 4:00 pm</div>
+          <div class="mt-2">Checkout before 10:00 am</div>
+          <div class="mt-2">14 guests maximum</div>
+        </div>
+        <div class="safety-prop">
+          <div class="bold-text">Safety & property</div>
+          <div class="mt-2">Security camera/recording device</div>
+          <div class="mt-2">Pool/hot tub without a gate or lock</div>
+          <div class="mt-2">Nearby lake, river, other body of water</div>
+        </div>
+        <div class="cancellation">
+            <div class="bold-text">Canellation policy</div>
+            <div class="mt-2">This reservation is non-refundable.</div>
+            <div class="mt-2">Review the Host’s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19.</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer mt-4 comm-rel">
+      <div class="d-flex justify-content-evenly px-3">
+            <div class="support mt-5">
+              <div class="bold-text">Support</div>
+              <div class="mt-2 hover-item">Help Center</div>
+              <div class="mt-2 hover-item">AirCover</div>
+              <div class="mt-2 hover-item">Supporting people with disabilities</div>
+              <div class="mt-2 hover-item">Cancellation options</div>
+              <div class="mt-2 hover-item">Our COVID-19 Response</div>
+              <div class="mt-2 hover-item">Report a neighbourhood concern</div>
+            </div>
+            <div class="community mt-5">
+              <div class="bold-text">Community</div>
+              <div class="mt-2 hover-item">Airbnb.org: disaster relief housing</div>
+              <div class="mt-2 hover-item">Combating discrimination</div>
+            </div>
+            <div class="hosting mt-5">
+              <div class="bold-text">Hosting</div>
+              <div class="mt-2 hover-item">Airbnb your home</div>
+              <div class="mt-2 hover-item">AirCover for Hosts</div>
+              <div class="mt-2 hover-item">Explore hosting resources</div>
+              <div class="mt-2 hover-item">Visit our community forum</div>
+              <div class="mt-2 hover-item">How to host responsibly</div>
+            </div>
+            <div class="airbnb mt-5">
+              <div class="bold-text">Airbnb</div>
+              <div class="mt-2 hover-item">Newsroom</div>
+              <div class="mt-2 hover-item">Learn about new features</div>
+              <div class="mt-2 hover-item">Letter from our founders</div>
+              <div class="mt-2 hover-item">Careers</div>
+              <div class="mt-2 hover-item">Investors</div>
+            </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="bottom d-flex justify-content-around mt-3">
+        <div class="me-5">
+          <span class="ref-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" fill="currentColor" class="bi bi-c-circle mb-1" viewBox="0 0 16 16">
+            <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z"/>
+          </svg>
+          <%= new Date().getUTCFullYear() %> Airbnb,Inc. <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/> 
+          </svg> 
+        </span>
+          <span class="ref-text">Privacy <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/> 
+          </svg> </span>
+          <span class="ref-text">Terms  <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/> 
+          </svg> </span>
+          <span class="ref-text">Sitemap  <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/> 
+          </svg> </span>
+          <span class="ref-text">Company details  <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/> 
+          </svg> </span>
+        </div>
+        <div class="ms-5">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
+              </svg> &nbsp;<span class="guide-text"> English (US) &nbsp;&nbsp;</span>
+          </span>
+          <span class="guide-text">$ US dollars&nbsp;</span>
+          <span class="me-2">
+            &nbsp;&nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg>
+            &nbsp;&nbsp;
+          </span>
+          <span class="me-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+            </svg>
+            &nbsp;&nbsp;
+          </span>
+          <span class="me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </svg>&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+
+///////////////////////////////////CSS////////////////////////////////////////////////////////////////////
+
+.reservation-area .user-input .inline-input .floating-labels{
+
+  }
+  .reservation-area .user-input .inline-input .form-floating .form-control{
+    border: 1px solid white;
+    border-radius:0.8rem;
+  }
+  #floatingCheckin{
+    border-right:1px solid #8f8f8f;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .reservation-area .user-input .inline-input{
+    border:1px solid #8f8f8f;
+    border-top-right-radius: 0.8rem;
+    border-top-left-radius:0.8rem;
+
+  }
+
+#picture img{
+    width:50%;
+    height:15rem;
+    border-top-left-radius: 1.2rem;
+    border-bottom-left-radius: 1.2rem;
+}
+.desc{
+    width:60%;
+}
+.desc .h3{
+    font-size: 1.5rem;;
+}
+.comm-margin{
+  margin:0 7rem;
+}
+
+.icon img{
+    width:4rem;
+    height:4rem;
+    border-radius:50%;
+}
+.hostIcon{
+    position: relative;
+    left: -10%;
+    z-index:-2;
+}
+.section{
+    width:57%;
+    position: relative;
+    z-index: -3;
+}
+
+.grey-text{
+    color: grey;
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+}
+
+.protect div img{
+    width:4rem;
+    height: 4rem;
+}
+
+.beadroom-corner{
+    width:35%;
+    height:9rem;
+    border:1px solid #8f8f8f;
+    border-radius: 1rem;
+}
+
+/* Ammenities grid */
+.item{
+    width:50%;
+}
+
+.amm-btn{
+    width:12rem;
+    border:1.5px solid black;
+    border-radius: 0.8rem;
+    padding:0.75rem;
+}
+
+/* Calender section */
+  #calendar{
+    margin-top:2rem;
+    width: auto;
+    height:auto;
+    font-family: 'Lato', sans-serif;  
+  }
+  #calendar_weekdays div{
+    display:inline-block;
+    vertical-align:top;
+  }
+  #calendar_content, #calendar_weekdays, #calendar_header{
+    position: relative;
+    width: 320px;
+    overflow: hidden;
+    float: left;
+    z-index: 10;
+  }
+  #calendar_weekdays div, #calendar_content div{
+    width:40px;
+    height: 40px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #FFFFFF;
+    color: #787878;
+  }
+  #calendar_content{
+    -webkit-border-radius: 0px 0px 12px 12px;
+    -moz-border-radius: 0px 0px 12px 12px; 
+    border-radius: 0px 0px 12px 12px;
+  }
+  #calendar_content div{
+    float: left;
+  }
+  #calendar_content div:hover{
+    background-color: #F8F8F8;
+  }
+  #calendar_content div.blank{
+    background-color: #E8E8E8;
+  }
+  #calendar_header, #calendar_content div.today{
+    zoom: 1;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+  }
+  #calendar_content div.today{
+    color: #FFFFFF;
+  }
+  #calendar_header{
+    width: 100%;
+    height: 37px;
+    text-align: center;
+    background-color: #FF6860;
+    padding: 18px 0;
+    -webkit-border-radius: 12px 12px 0px 0px;
+    -moz-border-radius: 12px 12px 0px 0px; 
+    border-radius: 12px 12px 0px 0px;
+  }
+  #calendar_header h1{
+    font-size: 1.5em;
+    color: #FFFFFF;
+    float:left;
+    width:70%;
+  }
+  i[class^=icon-chevron]{
+    color: #FFFFFF;
+    float: left;
+    width:15%;
+    border-radius: 50%;
+  }
+
+  hr#spc-divider{
+    margin-top:30rem;
+    position: relative;
+    z-index: -3;
+  }
+
+  .review-header span{
+    font-size: 1.5rem;
+  }
+
+  /* Rating section */
+  .rating-item{
+    width:50%;
+  }
+  .progress-bar{
+    background-color: black;
+  }
+  .progress{
+    background-color: #8f8f8f;
+  }
+  .progress-section{
+    margin-top:0.75rem;
+    margin-left:9rem;
+    width:10rem;
+  }
+  .rating-value{
+    font-size: 0.8rem;
+  }
+  .review-item{
+    width:45%;
+  }
+  /* host section */
+  .host-info .host-acheivement{
+    width:50%;
+    margin-right: 15rem;
+  }
+  .host-info .host-reach{
+    width:50%;
+  }
+  /* Dos and dont */
+  .dosdont .house-rules{
+    width:60%;
+  }
+  .dosdont .safety-prop,.cancellation{
+    width:60%;
+  }
+  .dosdont .cancellation{
+    width: 60%;
+  }
+
+  /* footer */
+  .footer{
+    border-top: 1px solid #a7a4a4;
+    background-color: rgb(250, 245, 245);
+    font-size: 0.86rem;
+    position:relative;
+  }
+  .footer-divider{
+    margin:3% 8%;
+  }
+  .hover-item:hover{
+    text-decoration: underline;
+    cursor:pointer;
+  }
+  .bottom {
+    padding-bottom:2rem;
+  }
+  .bottom div:nth-child(1){
+    margin-right:6rem;
+  }
+  .bottom div:nth-child(2){
+    margin-left:6rem;
+  }
+
